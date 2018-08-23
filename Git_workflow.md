@@ -27,11 +27,7 @@ git push
 
 5) Click on create repository.
 
-Community for Data Integration > CDI Group Learning: Introduction to Git for Data Science - DataCamp > image2018-8-22_12-43-49.png
-
 In the next screen, I click on the Clone or download button. (If you don't have SSH keys set up with GitHub, choose "Use HTTPS"). Then I click on the little clipboard icon to save the repo URL to my clipboard.
-
-Community for Data Integration > CDI Group Learning: Introduction to Git for Data Science - DataCamp > image2018-8-22_12-48-25.png
 
 Now I fire up my local Git Bash desktop app. In that window I
 
@@ -40,13 +36,9 @@ cd parent_of_new_repo_dir
 git clone git@github.com:csherwood-usgs/Demo_repository.git
 ```
 
-Community for Data Integration > CDI Group Learning: Introduction to Git for Data Science - DataCamp > image2018-8-22_12-54-48.png
-
 At this point, the only files in the repo will be the .git directory and the README.md. The README.md is just a text file in which you can use the Git markdown syntax to write intelligible notes about the repo. This is actually easiest to do on the GitHub page, where you can preview the results.
 
 The first thing I do with a new repo is copy the LICENSE and DISCLAIMER .md files from another repo. I hope these are ok...I inherited them from the one and only project I had published. (Note...the disclaimer changes when a project is officially published by the USGS...this is the disclaimer for unpublished code). Then I add, commit, and push those files, and I now have a project I can work on.
-
-Community for Data Integration > CDI Group Learning: Introduction to Git for Data Science - DataCamp > image2018-8-22_13-4-0.png
 
 You can grab the license and disclaimer from my repo at:
 
