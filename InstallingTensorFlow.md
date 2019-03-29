@@ -1,5 +1,5 @@
 
-Notes on my attempt to install TensorFlow
+### Notes on my attempt to install TensorFlow-gpu on Windows 10 machine
 
 Inte Xeon CPU E5-2643 v4 @ 3.4 GHz (two)
 64 GM RAM
@@ -30,3 +30,19 @@ nvcc: NVIDIA (R) Cuda compiler driver
 Copyright (c) 2005-2019 NVIDIA Corporation
 Built on Fri_Feb__8_19:08:26_Pacific_Standard_Time_2019
 Cuda compilation tools, release 10.1, V10.1.105
+
+After that, I followed the instructions here: https://towardsdatascience.com/tensorflow-gpu-installation-made-easy-use-conda-instead-of-pip-52e5249374bc, which boil down to: ```conda create --name tf_gpu tensorflow-gpu```
+
+That seems to work, because the following test works correctly:
+```import tensorflow as tf
+sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
+```
+
+For Dan's Optical Wave Gauge, I installed his owg environment. Then I did this
+```
+conda remove tensorflow
+conda install tensorflow-gpu==1.11.0
+conda install keras=2.2.4
+conda install cudnn
+```
+(keras gets uninstalled as a side-effect of removing tensorflow)
