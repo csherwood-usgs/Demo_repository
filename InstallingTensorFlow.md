@@ -37,8 +37,9 @@ That seems to work, because the following test works correctly:
 ```import tensorflow as tf
 sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
 ```
+However, it did not run Dan's Optical Wave Gauge because it could not find the MobilenetV2 app. This may have been a mistake on my part when trying to follow Dan's instructions on moving the model apps.
 
-For Dan's Optical Wave Gauge, I installed his owg environment. Then I did this
+For Dan's Optical Wave Gauge, I installed his `owg` environment. Then I did this
 ```
 conda remove tensorflow
 conda install tensorflow-gpu==1.11.0
