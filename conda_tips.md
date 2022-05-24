@@ -34,7 +34,7 @@ On my home github page, I go to `repositories` and select `new`.
 After naming it (lets call it `mynewrepo`, put a short description in the bubble and check `Add a README file`, then `Create repository`. Then edit the README.md file, adding some notes and maybe indicating where the file will reside on your computer(s).  
 #### Clone the repo to your local computer
 Click the green `Code` button and copy the URL for the repo. The URL will be something like `https://github.com/csherwood-usgs/mynewrepo.git`. Note that you can choose how to tranfer code to/from your repo. If you have not set up SSH keys (a topic for another day), then you will choose `https` and be required to submit a password when uploading.  
-On your local computer, change to the folder that contains your coding projects (in subfolders), and type:  
+On your local computer, open a git bash terminal, change to the folder that contains your coding projects (in subfolders), and type:  
 `git clone [paste in URL]`  
 
 #### Add some boilerplate to the repo  
