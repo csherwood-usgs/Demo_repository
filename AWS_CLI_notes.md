@@ -16,6 +16,10 @@ then shut down and reopen Powershell (honest!) then:
 
 (note the addition of `s3://`)
 
+This works
+
+`aws s3 ls s3://cmgp-upload-download-bucket/2022-09_FL/10020925/ --profile updown | tail`
+
 CoastCam directory:  
 
 `aws s3 ls s3://cmgp-coastcam/cameras/caco-01/new_products/products/1617298200.c1.snap.jpg --profile coastcam`  
