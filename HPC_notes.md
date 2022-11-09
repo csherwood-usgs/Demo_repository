@@ -1,5 +1,6 @@
 ***Building SWASH per the README.md in https://gitlab.tudelft.nl/citg/wavemodels/swash  
 
+'''
 (base) [csherwood@poseidon-l2 ~]$ start_12
 (base) [csherwood@pn124 ~]$ cd src
 (base) [csherwood@pn124 src]$ ls
@@ -80,3 +81,4 @@ See also "/vortexfs1/home/csherwood/src/swash/build/CMakeFiles/CMakeError.log".
 -- Generating done
 -- Build files have been written to: /vortexfs1/home/csherwood/src/swash/build
 (base) [csherwood@pn124 build]$ client_loop: send disconnect: Connection reset
+'''
