@@ -26,10 +26,10 @@ List status info for a currently running job:
 `sstat -j <jobid> --format=AveCPU,AvePages,AveRSS,AveVMSize,JobID --allsteps`
  
 Get statistics on completed jobs by jobid
-`sacct -j <jobid> --format=JobID,JobName,MaxRSS,Elapsed`
+`sacct -j <jobid> --format=jobid,submit,elapsed,usercpu,ncpus`
 
 See how much memory your job used
-`sacct -j <job_id> —format=”JobID,user,elapsed,ReqMem,MaxVMSize,ncpus,MaxVMSizeNode”`
+`sacct -j <job_id> --format=JobID,user,elapsed,ReqMem,MaxVMSize,ncpus,MaxVMSizeNode`
 
 ```[root@poseidon-l1 ~]# sacct -j 9200 --format="JobID,user,elapsed,ReqMem,MaxVMSize,ncpus,MaxVMSizeNode"
        JobID      User    Elapsed     ReqMem  MaxVMSize      NCPUS  MaxVMSizeNode 
