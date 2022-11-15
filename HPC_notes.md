@@ -1,6 +1,9 @@
 ### HPC notes
 
 ## Managing Jobs
+To check on running jobs
+`mj`
+
 To submit a job
 `sbatch <mysubmitscript.sh>`
 
