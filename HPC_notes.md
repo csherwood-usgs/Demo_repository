@@ -1,3 +1,63 @@
+### HPC notes
+
+## Managing Jobs
+To submit a job
+`sbatch <mysubmitscript.sh>`
+
+To submit an interactive job
+`srun -p interactive --mem=500 --ntasks=1 --time=00:20:00 --pty bash`
+
+List your current running jobs
+`squeue -u $USER -t RUNNING`
+
+List all pending jobs
+`squeue -al -t PENDING`
+
+List all current jobs in the compute partition
+`squeue -p compute`
+
+List detailed information for a job (useful for troubleshooting)
+`scontrol show jobid -dd  <jobid>`
+
+List status info for a currently running job:
+`sstat -j <jobid> --format=AveCPU,AvePages,AveRSS,AveVMSize,JobID --allsteps`
+ 
+Get statistics on completed jobs by jobid
+`sacct -j <jobid> --format=JobID,JobName,MaxRSS,Elapsed`
+
+See how much memory your job used
+`sacct -j <job_id> —format=”JobID,user,elapsed,ReqMem,MaxVMSize,ncpus,MaxVMSizeNode”`
+
+```[root@poseidon-l1 ~]# sacct -j 9200 --format="JobID,user,elapsed,ReqMem,MaxVMSize,ncpus,MaxVMSizeNode"
+       JobID      User    Elapsed     ReqMem  MaxVMSize      NCPUS  MaxVMSizeNode 
+------------ --------- ---------- ---------- ---------- ---------- -------------- 
+9200          username   01:09:51    40000Mn                    72                
+9200.batch               01:09:51    40000Mn  27503812K         36          pn055 
+9200.0                   01:09:49    40000Mn  27002992K          1          pn056 
+In this example, the job used ~28GB of memory.
+```
+
+Cancel job
+`scancel  <jobid>`
+
+Cancel all pending jobs
+`scancel -t PENDING -u <username>`
+
+Cancel jobs by name
+`scancel --name  myJobName`
+
+Pause job
+`scontrol hold  <jobid>`
+
+Resume job
+`scontrol resume  <jobid>`
+
+Requeue job
+`scontrol requeue  <jobid>`
+
+View cluster status and availability
+`sinfo`
+
 ### Building SWASH per the README.md in https://gitlab.tudelft.nl/citg/wavemodels/swash  
 ```
 (base) [csherwood@pn124 build]$ module list
