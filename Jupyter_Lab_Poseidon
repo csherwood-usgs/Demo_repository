@@ -1,0 +1,81 @@
+How to analyze data on Poseidon via python/jupyterlab/jupyter notebooks
+
+Dependencies:
+
+Need some version of python on Poseidon, my environment is based on Pangeo, named pangeox
+
+You can follow these directions: https://ioos.github.io/ioos_code_lab/content/ioos_installation_conda.html
+
+And it will comply with Poseidon python licensing issues (January 2022 email from Rich Signell)
+
+Procedure:
+
+1. Sign onto Poseidon
+
+2. In your home directory - make folder called bin and change into that directory
+
+a. “mkdir ~/bin” or “mkdir bin” in the ~/ folder
+
+b. “cd bin” or “cd ~/bin”
+
+3. Two files are needed in this directory - start_12 (start a 12 hour session) and start_jupyter_lab (creates session for your home browser) – see below
+
+4. from poseidon terminal window type start_12 - this will give you a compute node node
+
+a. “start_12”
+
+b. Output:
+
+(base) [scook@poseidon-l1 bin]$ start_12
+
+(base) [scook@pn120 bin]$
+
+5. Wait for the compute node to be allocated and from that terminal window type start_jupyter_lab - this will start a jupyter lab environment
+
+a. “start_jupyter_lab”
+
+b. Output:
+
+(base) [scook@pn120 bin]$ start_jupyter_proj
+
+ssh -N -L 8888:pn120:8888 -L 8787:pn120:8787 scook@poseidon.whoi.edu
+
+[I 19:38:28.045 LabApp] [nb_conda_kernels] enabled, 1 kernels found
+
+[I 19:38:58.883 LabApp] JupyterLab extension loaded from /vortexfs1/home/scook/miniconda3/envs/pangeox/lib/python3.8/site-packages/jupyterlab
+
+[I 19:38:58.883 LabApp] JupyterLab application directory is /vortexfs1/home/scook/miniconda3/envs/pangeox/share/jupyter/lab
+
+[I 19:38:58.976 LabApp] Serving notebooks from local directory: /vortexfs1/home/scook
+
+[I 19:38:58.976 LabApp] Jupyter Notebook 6.4.3 is running at:
+
+[I 19:38:58.976 LabApp] http://pn120:8888/
+
+[I 19:38:58.976 LabApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+
+6. Once the jupyterlab session is started, copy the ssh'd output and paste to personal computer terminal window 7. In a browser window type http://localhost:8888/
+
+start_12
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+srun --qos=usgs -p usgs --ntasks-per-node=1 --mem=60G --time=12:00:00 --pty bash
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+start_jupyter_lab
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+source activate pangeox
+
+cd /vortexfs1/home/scook
+
+echo "ssh -N -L 8888:`hostname`:8888 -L 8787:`hostname`:8787 $USER@poseidon.whoi.edu"
+
+jupyter lab --no-browser --ip=`hostname` --port=8888
+
+pangeox = python environment on Poseidon
+
+/vortexfs1/
