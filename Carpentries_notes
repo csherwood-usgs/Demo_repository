@@ -1,0 +1,5 @@
+8 bits = 1 byte  
+integer = 32 bits, 4 bytes  
+float = 64 bits, 8 bits
+character = 32 bits, 4 bytes
+
