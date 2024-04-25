@@ -35,7 +35,7 @@ git push
 ```
 
 
-## If I am working on the master branch of an existing project:
+## If I am working on an existing project:
 ```
 cd project_dir
 git pull
@@ -50,19 +50,6 @@ When I am done for this session...or always at end of day, I use the command tha
 git commit -a -m "fixed all bugs"
 git push
 ```
-## If I want to start a new project:
-
-1) Navigate to my home on Github
-
-2) Click on the Repositories tab
-
-3) Click on the New button
-
-4) Enter a Repository name in the box, put in a one-line description in the next box, check the Public button, and check Initialize this repository with a README.
-
-5) Click on create repository.
-
-In the next screen, I click on the Clone or download button. (If you don't have SSH keys set up with GitHub, choose "Use HTTPS"). Then I click on the little clipboard icon to save the repo URL to my clipboard.
 
 Now I fire up my local Git Bash desktop app. In that window I
 
