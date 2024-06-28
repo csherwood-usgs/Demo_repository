@@ -2,7 +2,7 @@ One of my frustrations about tutorials for Git (and previously for Subversion) i
 
 These steps assume you want to mostly type in Git commands. There is also a Git GUI, and Git options built in to development environments like Jupterlab and MS VScode.  
 
-## To start a new project
+## To start a new project:
 I navigate my browser to my home on Github, click on the "Repositories" tab, and click on the "New" button to create a project in my cloud account. I and tick the box that says Add `README.md` file.
 I put a few notes in the README file about the project and save it. Now I have a repo with one file.  
 
@@ -33,36 +33,28 @@ The `-a` means all changed, tracked files will be staged and committed, and the 
 ```
 git push
 ```
-
-
-## If I am working on an existing project:
+This is an assumed shortcut for
 ```
-cd project_dir
+git push origin main
+```
+where `origin` refers to the target repo, and `main` refers to the current branch you want to push.
+
+## To continue working on an existing project:
+On my local computer:
+```
+cd <project_dir>
 git pull
 ```
-That will ensure I get changes I may have saved from another computer, like when I work at home. Then I work, making changes to code. If I add files I want to track:
-
-```git add file_name```
-
-When I am done for this session...or always at end of day, I use the command that stages and commits all pending changes, with a "memo":
-
+That will ensure I get changes I may have saved from another computer, like when I work at home. Then I can work on code. If I add a file I want to track:
+```
+git add <file_name>
+```
+If I want to delete a file and no longer track it:
+```
+git rm <file_name>
+```
+When I am done for this session...or always at end of day, I use the command that stages and commits all pending changes (locally) with a "memo", and push those changes up to the cloud repo:
 ```
 git commit -a -m "fixed all bugs"
 git push
 ```
-
-Now I fire up my local Git Bash desktop app. In that window I
-
-```
-cd parent_of_new_repo_dir
-git clone git@github.com:csherwood-usgs/Demo_repository.git
-```
-
-At this point, the only files in the repo will be the .git directory and the README.md. The README.md is just a text file in which you can use the Git markdown syntax to write intelligible notes about the repo. This is actually easiest to do on the GitHub page, where you can preview the results.
-
-The first thing I do with a new repo is copy the LICENSE and DISCLAIMER .md files from another repo. I hope these are ok...I inherited them from the one and only project I had published. (Note...the disclaimer changes when a project is officially published by the USGS...this is the disclaimer for unpublished code). Then I add, commit, and push those files, and I now have a project I can work on.
-
-You can grab the license and disclaimer from my repo at:
-
-https://github.com/csherwood-usgs/Demo_repository
-
