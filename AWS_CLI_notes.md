@@ -40,3 +40,7 @@ This grabs all of the timex exposures:
 
 `aws s3 cp s3://cmgp-coastcam/cameras/caco-02/products/ . --recursive --exclude "*" --include "*timex*" --profile coastcam`  
 
+This grabs all of the snaps from a specific date:  
+
+`aws s3 cp s3://cmgp-coastcam/cameras/caco-04/ . --recursive --exclude "*" --include "*Nov.13*snap*" --profile coastcam`
+
